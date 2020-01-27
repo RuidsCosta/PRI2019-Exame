@@ -49,7 +49,8 @@
             Que processos são regulados pelo diploma "Lei 9/2009"? Tive que descobrir qual a lei 9/2009 com o pedido http://clav-api.dglab.gov.pt/api/legislacao. Depois com o pedido http://clav-api.dglab.gov.pt/api/legislacao/leg_BYfaAZW8qst3DZuwmKofj/processos? conseguimos observar que ha 3 processos regulados por esta legislaçao(450.10.442, 750.10.001 e 750.20.600)
         </p>
         <p>
-            
+            Que diplomas legislativos estão associados ao processo "c300.10.005"
+            Com consulta ao site podemos ver que os diplomas legislativos associados sao: 104/2011, 149/2012, 18/2008 e 4/2015.
         </p>
         
         <p>
