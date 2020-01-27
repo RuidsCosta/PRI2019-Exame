@@ -23,11 +23,11 @@
     <abstract>
         
         <p>
-            O primeiro exercício do teste consistia em definir uma <b>API</b> de dados para uma coleção de publicações. O primeiro passo foi importar estes dados para o <b>MongoDB</b>. Para isso, foi necessário resolver problemas de <i>encoding</i> do ficheiro, através da conversão para <b>XML</b>(https://www.freeformatter.com/json-to-xml-converter.html#ad-output) e consequente conversão para <b>JSON</b>(https://www.convertjson.com/xml-to-json.htm). Finzalizados estes passos, apenas restava importar os dados, sendo que foi necessário colocar os mesmos em formato de <i>array</i> de objetos. Para fazer a importação, foi utilizado o comando <b>mongoimport --db pubs --collection pubs --file dataset.json --jsonArray</b>
+            O primeiro exercício do teste consistia em definir uma <b>API</b> de dados para uma coleção de publicações. O primeiro passo foi importar estes dados para o <b>MongoDB</b>. Para isso, foi necessário resolver problemas de <i>encoding</i> do ficheiro, através da conversão para <b>XML</b>(https://www.freeformatter.com/json-to-xml-converter.html#ad-output) e consequente conversão para <b>JSON</b>(https://www.convertjson.com/xml-to-json.htm). Finzalizados estes passos, apenas restava importar os dados, sendo que foi necessário colocar os mesmos em formato de <i>array</i> de objetos. Para fazer a importação, foi utilizado o comando <b>mongoimport --db obras --collection obras --file dataset.json --jsonArray</b>
         </p>
         
         <p>
-            Após ter o servidor <b>Mongo</b> a correr, é necessário instalar os componentes do servidor com o comando <b>npm i</b>. Feito isto, apenas é necessário correr o mesmo com <b>npm start</b>, sendo que o servidor ficará à escuta na porta <b>3007</b>.
+            Após ter o servidor <b>Mongo</b> a correr, é necessário instalar os componentes do servidor com o comando <b>npm i</b>. Feito isto, apenas é necessário correr o mesmo com <b>npm start</b>, sendo que o servidor ficará à escuta na porta <b>1027</b>.
             Dito isto, de modo a dar respostas às rotas pedidas, foi necessário definir um modelo e vários controladores para os dados. É de destacar a rota final pedida, em que foi efetuada uma inversão estrtural da <b>BD</b>, ou seja, agruparam-se as publicações por autor, em vez de as publicações possuírem os autores em si mesmas. 
         </p>
         
@@ -40,20 +40,20 @@
         </p>
         
         <p>
-            Quantos Tipologias estão catalogadas? São 76 tipologias catalogadas (ficheiro questões/ex1.json na pasta do ex2). O pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/tipologias?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ</b>
+            Quantos Diplomas legislativos estao catalogados? São 1624 diplomas legislativos catalogados. O pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/indicadores/leg?</b>
         </p>
         <p>
-            Quantos Entidades pertencem à Tipologia tip_FSS? 5 entidades (ficheiro questões/ex2.json na pasta do ex2). O pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/tipologias/tip_FSS/elementos?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ</b>
+            Quantos diplomas do tipo "Portaria" estão catalogados? Estao catalogados 324. O pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/legislacao/portarias?</b>
         </p>
         <p>
-            Em que processos a tipologia tip_FA participa como Comunicador? 650.10.019, 650.10.020, 650.10.212, 650.10.213 (ficheiro questões/ex3.json na pasta do ex2). P pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/tipologias/tip_FA/intervencao/participante?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ</b>
+            Que processos são regulados pelo diploma "Lei 9/2009"? Tive que descobrir qual a lei 9/2009 com o pedido http://clav-api.dglab.gov.pt/api/legislacao. Depois com o pedido http://clav-api.dglab.gov.pt/api/legislacao/leg_BYfaAZW8qst3DZuwmKofj/processos? conseguimos observar que ha 3 processos regulados por esta legislaçao(450.10.442, 750.10.001 e 750.20.600)
         </p>
         <p>
-            A que tipologias pertence a entidade ent_SEF? Administração Pública e Forças e serviços de segurança (ficheiro questões/ex4.json na pasta do ex2). O pedido efetuado foi: GET <b>http://clav-api.dglab.gov.pt/api/entidades/ent_SEF/tipologias?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ</b>
+            
         </p>
         
         <p>
-            No que toca ao servidor de interface, foi utilizado o módulo <b>axios</b>, permitindo fazer questões à API de forma simples e posteriormente foi efetuado o tratamento dos dados de forma gráfica. Na página inicial são apresentadas as tipologias, em formato tabular, sendo que o identificador de cada uma permite o redireccionamento para a página individual da mesma. Nessa, são apresentadas as caraterísticas associadas, tais como estado, designação e sigla. Além disso, são apresentadas as entidades pertences à tipologia, sendo que os identificadores das mesmas funcionam como hiperligações, apresentando as páginas individuais das mesmas. São, ainda, apresentados os processos em que a tipologia participa e os que de que é dona, também em forma de tabela. Note-se que tocas as páginas permitem voltar à página inicial, sendo este o ponto de partida da aplicação.
+            No que toca ao servidor de interface, foi utilizado o módulo <b>axios</b>, permitindo fazer questões à API de forma simples e posteriormente foi efetuado o tratamento dos dados de forma gráfica. Na página inicial são apresentadas as legislaturas, em formato tabular, sendo que o identificador de cada uma permite o redireccionamento para a página individual da mesma. Nessa, são apresentadas as caraterísticas associadas, tais como estado, data e sumario contendo também um link para a pagina oficial da mesma. Além disso, são apresentadas as entidades pertences à legislatura, sao tambem apresentadas as classes pertencentes a legislatura sendo que os identificadores das mesmas funcionam como hiperligações, apresentando as páginas oficiais das mesmas. Note-se que tocas as páginas permitem voltar à página inicial, sendo este o ponto de partida da aplicação.
         </p>
 
         

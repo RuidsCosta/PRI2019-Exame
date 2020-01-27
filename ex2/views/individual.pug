@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    .w3-card-4
+        header.w3-container.w3-black
+            h2= item.estado
+    .w3-container
+        p 
+            b Data
+            = item.data
+        p 
+            b Sumario 
+            = item.sumario
+        p 
+            a(href="http://clav.dglab.gov.pt/legislacao/" + item.id) Link
+        h3 Entidades    
+        table.w3-table-all
+                tr.w3-hover-blue
+                    th Id
+                    th Sigla
+                each o in item.entidades
+                    tr.w3-hover-blue
+                        td= o.id
+                        td= o.sigla
+
+
+    hr
+    .w3-container
+        .w3-card-4
+            header.w3-container.w3-blue
+            h1 Lista de Processos que a legislaçao regula
+            .w3-container
+            table.w3-table-all
+                tr.w3-hover-blue
+                    th Código
+                    th Título
+                    th ID
+                    th Link
+                each o in elem
+                    tr.w3-hover-blue
+                        td= o.codigo
+                        td= o.titulo
+                        td= o.id
+                        td  
+                            a(href="http://clav.dglab.gov.pt/classes/consultar/" + o.id ) Link
+    
+    hr
+    form(method="get" action=`/`)
+        button.w3-btn.w3-blue.w3-section(style="width: 100%" type="submit") 
+            b Início
+                  
