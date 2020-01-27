@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pr>
     <meta>
-        <keyname>PRI_TESTE</keyname>
-        <title>Teste da UC de Processamento e Representação de Informação</title>
+        <keyname>PRI_EXAME</keyname>
+        <title>Exame da UC de Processamento e Representação de Informação</title>
         <subtitle>Perfil de PLC 2019/2020</subtitle>
         <bdate>2020-01-27</bdate>
         <edate>2020-01-27</edate>
