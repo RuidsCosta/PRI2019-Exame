@@ -60,10 +60,10 @@
         
     </abstract>
     <deliverables>
-        <deliverable path="https://github.com/citoplasme/PRI/tree/master/Teste">Github</deliverable>
-        <deliverable path="https://github.com/citoplasme/PRI/blob/master/Teste/ex1">Exercício 1</deliverable>
-        <deliverable path="https://github.com/citoplasme/PRI/blob/master/Teste/ex2">Exercício 2</deliverable>
-        <deliverable path="https://github.com/citoplasme/PRI/blob/master/Teste/PR/pr.html">Project Record HTML</deliverable>
+        <deliverable path="https://github.com/RuidsCosta/PRI2019-Exame">Github</deliverable>
+        <deliverable path="https://github.com/RuidsCosta/PRI2019-Exame/tree/master/ex1">Exercício 1</deliverable>
+        <deliverable path="https://github.com/RuidsCosta/PRI2019-Exame/tree/master/ex2">Exercício 2</deliverable>
+        <deliverable path="https://github.com/RuidsCosta/PRI2019-Exame/blob/master/pr.xml">Project Record XML</deliverable>
     </deliverables>
 </pr>
 
